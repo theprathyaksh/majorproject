@@ -83,19 +83,21 @@ export default function Home() {
 
       <input className="hidden" id="file-input" type="file" />
 
+      <br/>
+      <br/>
 
-      <div className="flex justify-center items-center h-screen m-12">
-        <div className="grid sm:grid-cols-2 min-h-[300px] min-w-[1000px] bg-gray-600 border border-gray-500">
-        <div className="w-1/2 min-h-[400px] min-w-[500px] rounded-lg bg-gray-600 shadow">
-          <h2 className="text-center mb-4 text-3xl text-white">Raw text</h2>
+      <div className="flex justify-center items-center h-screen">
+        <div className="grid sm:grid-cols-2 min-h-[300px] min-w-[1000px] bg-gray-900 border border-gray-900 rounded-lg">
+        <div className="w-1/2 min-h-[400px] min-w-[500px] rounded-lg bg-gray-900 shadow">
+          <h2 className="text-center mb-4 text-2xl text-white m-4">Raw text</h2>
           <div className="text-white" id="pdfContent"></div>
         </div>
-        <div className="w-1/2 min-h-[300px] min-w-[500px] rounded-lg bg-gray-600 shadow">
-          <h2 className="text-center mb-4 text-3xl text-white">
+        <div className="w-1/2 min-h-[300px] min-w-[500px] rounded-lg bg-gray-900 shadow">
+          <h2 className="text-center mb-4 text-2xl text-white m-4">
             Summarized text
           </h2>
           {isLoading && (
-            <p className="text-white text-center">Connecting to Octo AI...</p>
+            <p className="text-white text-center">Processing pdf...</p>
           )}
           {!isLoading && (
             <>
@@ -106,7 +108,7 @@ export default function Home() {
       </div>
       </div>
   
-      <div className="mt-4">
+
       <Button
         onClick={() => {
           document.getElementById("file-input").click();
@@ -126,7 +128,6 @@ export default function Home() {
         </svg>
         <span>Upload PDF</span>
       </Button> 
-      </div>
       
 
 </main>

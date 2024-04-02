@@ -28,4 +28,19 @@ body {
   font-family: "Faktum Test", sans-serif;
 }
 
+.rectangleBox {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.slider {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+}
+
+
 @import url("https://fonts.cdnfonts.com/css/faktum-test");

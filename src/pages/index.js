@@ -73,72 +73,40 @@ export default function Home() {
   }, []);
 
   return (
-    <main
-      className={`flex relative min-h-screen flex-col items-center py-12 px-12 h-[40rem] w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased`}
-      
-    >
-      <><BackgroundBeams/>
-      </>
+    <main className={`flex relative min-h-screen flex-col items-center py-12 px-12 w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased overflow-y-auto`}>
+      <BackgroundBeams/>
       <div className="top-10 left-10 absolute flex items-center gap-4">
         <span className="relative z-10 text-sm md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">Document Summarization</span>
       </div>
 
       <input className="hidden" id="file-input" type="file" />
 
-
       <br/>
       <br/>
 
-  {/* <div className="flex justify-center items-center overflow-hidden">  
-  <div className="grid sm:grid-cols-2 min-h-[300px] min-w-[1000px] bg-gray-900 border border-gray-900 rounded-lg">
-    <div className="w-1/2 min-h-[400px] min-w-[500px] rounded-lg bg-gray-900 shadow">
-      <h2 className="text-center mb-4 text-2xl text-white m-4">Raw text</h2>
-      <div className="text-white" id="pdfContent"></div>
-    </div>
-    <div className="w-1/2 min-h-[300px] min-w-[500px] rounded-lg bg-gray-900 shadow overflow-x-auto">
-      <h2 className="text-center mb-4 text-2xl text-white m-4">
-        Summarized text
-      </h2>
-      {isLoading && (
-        <p className="text-white text-center">Processing pdf...</p>
-      )}
-      {!isLoading && (
-        <>
-          <div className="text-white">{summary}</div>
-        </>
-      )}
-    </div>  
-  </div>
-</div> */}
-<div className="grid sm:grid-cols-2 min-h-[300px] min-w-[1000px] bg-gray-900 border border-gray-900 rounded-lg">
-<div class="relative bg-gray-900  px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 w-full">
-    <div class="mx-auto max-w-md w-full h-48 overflow-y-auto">
-      
-      <div class="divide-y divide-gray-300/50">
-      <h2 className="text-center mb-4 text-2xl text-white m-4">Raw text</h2>
-        <div class="space-y-6 py-8 text-base leading-7 text-white" id="pdfContent">
+      <div className="grid sm:grid-cols-2 min-h-[300px] min-w-[1000px] bg-gray-900 border border-gray-900 rounded-lg mt-8">
+        <div class="relative bg-gray-900  px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 w-full">
+          <div class="mx-auto max-w-md w-full h-48 overflow-y-auto">
+            <div class="divide-y divide-gray-300/50">
+              <h2 className="text-center mb-4 text-2xl text-white m-4">Raw text</h2>
+              <div class="space-y-6 py-8 text-base leading-7 text-white" id="pdfContent"></div>
+            </div>
+          </div>
+        </div>
+        <div class="relative bg-gray-900 px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 w-full">
+          <div class="mx-auto max-w-md w-full h-48 overflow-y-auto">
+            <div class="divide-y divide-gray-300/50">
+              <h2 className="text-center mb-4 text-2xl text-white m-4">Summarized text</h2>
+              {isLoading && (
+                <p className="text-white text-center">Processing pdf...</p>
+              )}
+              {!isLoading && (
+                <div className="text-white">{summary}</div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="relative bg-gray-900 px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 w-full">
-    <div class="mx-auto max-w-md w-full h-48 overflow-y-auto">
-      <div class="divide-y divide-gray-300/50">
-      <h2 className="text-center mb-4 text-2xl text-white m-4">
-        Summarized text
-      </h2>
-      {isLoading && (
-        <p className="text-white text-center">Processing pdf...</p>
-      )}
-      {!isLoading && (
-        <>
-          <div className="text-white">{summary}</div>
-        </>
-      )}
-      </div>
-    </div>
-  </div>
-</div>
 
       <br/>
       <Button
@@ -161,8 +129,35 @@ export default function Home() {
         <span>Upload PDF</span>
       </Button> 
 
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div className="h-[40rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <h1 className="md:text-5xl text-3xl sm:text-4xl font-bold text-center text-white relative z-20">
+      Document Summarization App
+      </h1>
+      <div className="w-[40rem] h-40 relative">
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+ 
+      
+        <SparklesCore
+          background="transparent"
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={1200}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
 
-</main>
-
+        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div> 
+      </div> 
+    </div> 
+    </main>
   );
 }

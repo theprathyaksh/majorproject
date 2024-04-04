@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BackgroundBeams } from "../components/ui/background-beams";
 import { Button } from "../components/ui/moving-border";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const SUMARIZE_URL = "http://localhost:3000/api/summarize";
 
@@ -49,6 +50,7 @@ export default function Home() {
     });
   };
 
+
   const onChangeFileInput = (event) => {
     const file = event.target.files[0];
     if (file.type !== "application/pdf") {
@@ -78,37 +80,67 @@ export default function Home() {
       <><BackgroundBeams/>
       </>
       <div className="top-10 left-10 absolute flex items-center gap-4">
-        <span className="relative z-10 text-sm md:text-3xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">Document Summarization</span>
+        <span className="relative z-10 text-sm md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">Document Summarization</span>
       </div>
 
       <input className="hidden" id="file-input" type="file" />
 
+
       <br/>
       <br/>
 
-      <div className="flex justify-center items-center h-screen">
-        <div className="grid sm:grid-cols-2 min-h-[300px] min-w-[1000px] bg-gray-900 border border-gray-900 rounded-lg">
-        <div className="w-1/2 min-h-[400px] min-w-[500px] rounded-lg bg-gray-900 shadow">
-          <h2 className="text-center mb-4 text-2xl text-white m-4">Raw text</h2>
-          <div className="text-white" id="pdfContent"></div>
+  {/* <div className="flex justify-center items-center overflow-hidden">  
+  <div className="grid sm:grid-cols-2 min-h-[300px] min-w-[1000px] bg-gray-900 border border-gray-900 rounded-lg">
+    <div className="w-1/2 min-h-[400px] min-w-[500px] rounded-lg bg-gray-900 shadow">
+      <h2 className="text-center mb-4 text-2xl text-white m-4">Raw text</h2>
+      <div className="text-white" id="pdfContent"></div>
+    </div>
+    <div className="w-1/2 min-h-[300px] min-w-[500px] rounded-lg bg-gray-900 shadow overflow-x-auto">
+      <h2 className="text-center mb-4 text-2xl text-white m-4">
+        Summarized text
+      </h2>
+      {isLoading && (
+        <p className="text-white text-center">Processing pdf...</p>
+      )}
+      {!isLoading && (
+        <>
+          <div className="text-white">{summary}</div>
+        </>
+      )}
+    </div>  
+  </div>
+</div> */}
+<div className="grid sm:grid-cols-2 min-h-[300px] min-w-[1000px] bg-gray-900 border border-gray-900 rounded-lg">
+<div class="relative bg-gray-900  px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 w-full">
+    <div class="mx-auto max-w-md w-full h-48 overflow-y-auto">
+      
+      <div class="divide-y divide-gray-300/50">
+      <h2 className="text-center mb-4 text-2xl text-white m-4">Raw text</h2>
+        <div class="space-y-6 py-8 text-base leading-7 text-white" id="pdfContent">
         </div>
-        <div className="w-1/2 min-h-[300px] min-w-[500px] rounded-lg bg-gray-900 shadow">
-          <h2 className="text-center mb-4 text-2xl text-white m-4">
-            Summarized text
-          </h2>
-          {isLoading && (
-            <p className="text-white text-center">Processing pdf...</p>
-          )}
-          {!isLoading && (
-            <>
-              <div className="text-white">{summary}</div>
-            </>
-          )}
-        </div>  
       </div>
+    </div>
+  </div>
+  <div class="relative bg-gray-900 px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 w-full">
+    <div class="mx-auto max-w-md w-full h-48 overflow-y-auto">
+      <div class="divide-y divide-gray-300/50">
+      <h2 className="text-center mb-4 text-2xl text-white m-4">
+        Summarized text
+      </h2>
+      {isLoading && (
+        <p className="text-white text-center">Processing pdf...</p>
+      )}
+      {!isLoading && (
+        <>
+          <div className="text-white">{summary}</div>
+        </>
+      )}
       </div>
-  
+    </div>
+  </div>
+</div>
 
+      <br/>
       <Button
         onClick={() => {
           document.getElementById("file-input").click();
@@ -128,7 +160,7 @@ export default function Home() {
         </svg>
         <span>Upload PDF</span>
       </Button> 
-      
+
 
 </main>
 

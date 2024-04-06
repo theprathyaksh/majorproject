@@ -84,9 +84,9 @@ export default function Home() {
       <br/>
       <br/>
 
-      <div className="grid sm:grid-cols-2 min-h-[300px] min-w-[1000px] bg-gray-900 border border-gray-900 rounded-lg mt-8">
+      <div className="grid sm:grid-cols-2 min-h-[400px] min-w-[1000px] bg-gray-900 border border-gray-900 rounded-lg mt-8">
         <div class="relative bg-gray-900  px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg sm:px-10 w-full">
-          <div class="mx-auto max-w-md w-full h-48 overflow-y-auto">
+          <div class="mx-auto max-w-md w-full h-48 overflow-y-auto ">
             <div class="divide-y divide-gray-300/50">
               <h2 className="text-center mb-4 text-2xl text-white m-4">Raw text</h2>
               <div class="space-y-6 py-8 text-base leading-7 text-white" id="pdfContent"></div>
@@ -108,6 +108,7 @@ export default function Home() {
         </div>
       </div>
 
+      <br/>
       <br/>
       <Button
         onClick={() => {

@@ -27,4 +27,12 @@ body {
 
   font-family: "Faktum Test", sans-serif;
 }
+::-webkit-scrollbar{
+  background: #e8f2ff;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #0043e8;
+}
 @import url("https://fonts.cdnfonts.com/css/faktum-test");
